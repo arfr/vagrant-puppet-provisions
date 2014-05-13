@@ -33,7 +33,7 @@ class apache {
 
   # recurse is bad, very bad, have to find better solution
   # for production maybe okay, but not for the development the provision takes to long
-  file { "/var/www/vagrant":
+  file { "/var/www/root":
     ensure  => directory,
     recurse => true,
     mode    => '0777',
@@ -48,7 +48,7 @@ class apache {
     owner     => root,
     group     => root,
     content   => template('apache/000-default.conf.erb'),
-    require   => [ Package['apache2'], File['/var/www/vagrant'] ],
+    require   => [ Package['apache2'], File['/var/www/root'] ],
     notify    => Service['apache2']
   }
 }

@@ -39,10 +39,11 @@ class { 'postgresql::globals':
   encoding            => 'UTF8',
   locale              => 'en_US'
 }
-->
+
 class { 'postgresql::server':
   ip_mask_deny_postgres_user => hiera('postgresql::ip_mask_deny_postgres_user'),
   ip_mask_allow_all_users    => hiera('postgresql::ip_mask_allow_all_users'),
   listen_addresses           => hiera('postgresql::listen_addresses'),
-  postgres_password          => hiera('postgresql::postgres_password')
+  postgres_password          => hiera('postgresql::postgres_password'),
+  require                    => Class['postgresql::globals']
 }

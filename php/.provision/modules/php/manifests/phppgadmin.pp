@@ -1,9 +1,9 @@
 class php::phppgadmin {
   exec { 'setup-phppgadmin':
     command => "sudo wget --no-check-certificate https://github.com/phppgadmin/phppgadmin/archive/master.zip &&
-                  sudo unzip master.zip &&
-                  sudo mv phppgadmin-master /var/www/phppgadmin &&
-                  sudo rm -rf master.zip",
+                sudo unzip master.zip &&
+                sudo mv phppgadmin-master /var/www/phppgadmin &&
+                sudo rm -rf master.zip",
     unless  => '[ -d /var/www/phppgadmin ]',
     require => [ Package['php5'], Package['apache2'] ]
   }

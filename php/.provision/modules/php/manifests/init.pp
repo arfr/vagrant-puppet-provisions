@@ -72,8 +72,8 @@ class php (
 
   file { '/var/www/php':
     ensure  => 'directory',
-    owner   => 'vagrant',
-    group   => 'vagrant',
+    owner   => 'root',
+    group   => 'root',
     mode    => '0777',
     require => Package['apache2']
   }
@@ -82,8 +82,8 @@ class php (
   # @todo: fix it
   file { '/etc/apache2/sites-enabled/001-php.conf':
     ensure  => present,
-    owner   => root,
-    group   => root,
+    owner   => 'root',
+    group   => 'root',
     mode    => '0644',
     content => template('php/001-php.conf.erb'),
     require => Package['apache2'],
