@@ -1,6 +1,6 @@
 class php (
-  $timezone = hiera('php.timezone', 'Europe/Berlin'),
-  $email = hiera('php.email', 'webmaster@localhost')
+  $timezone = hiera('php::timezone', 'Europe/Berlin'),
+  $email = hiera('php::email', 'webmaster@localhost')
 ) {
   include php::composer
   include php::phpmyadmin
