@@ -1,0 +1,25 @@
+date.timezone = "<%= @timezone %>"
+short_open_tag = Off
+display_errors = On
+error_reporting = -1
+error_log = /var/log/php.err
+session.gc_maxlifetime = 36000
+max_execution_time = 180
+max_input_time = 180
+memory_limit = 256M
+upload_max_filesize = 100M
+
+sendmail_path = /usr/local/bin/catchmail
+sendmail_from = "webmaster@localhost"
+
+xdebug.profiler_enable = 0
+xdebug.profiler_enable_trigger = 1
+xdebug.profiler_output_dir = "/tmp/xdebug/profiler"
+xdebug.profiler_output_name cachegrind.out.%t.%p
+xdebug.trace_output_dir = "/tmp/xdebug/trace"
+xdebug.remote_enable=1
+xdebug.remote_port=9000
+xdebug.remote_connect_back=1
+xdebug.idekey=PHPSTORM
+xdebug.max_nesting_level = 200
+xdebug.var_display_max_data = 10000

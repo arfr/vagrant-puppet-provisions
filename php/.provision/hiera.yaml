@@ -1,0 +1,11 @@
+---
+:backends:
+  - yaml
+
+:yaml:
+  :datadir: '/vagrant/.provision/hieradata'
+
+:hierarchy:
+  - php
+  - mysql
+  - postgresql

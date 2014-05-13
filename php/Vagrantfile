@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box_url = "http://boxes.arfr.de/ubuntu-14.04-server-amd64.box"
+  config.vm.box = "ubuntu-14.04-server-amd64"
+
+  config.vm.network :private_network, ip: "10.10.10.10"
+
+  config.vm.synced_folder "./", "/var/www/vagrant"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 1024
+    vb.cpus = 1
+  end
+
+  config.vm.provision :shell, :path => ".provision/scripts/modules.sh"
+
+  config.vm.provision "puppet" do |puppet|
+    puppet.manifests_path = ".provision/manifests"
+    puppet.manifest_file = "site.pp"
+    puppet.module_path = ".provision/modules"
+    puppet.hiera_config_path = ".provision/hiera.yaml"
+  end
+
+end

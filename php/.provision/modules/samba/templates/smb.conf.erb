@@ -1,0 +1,12 @@
+[global]
+    valid users = @vagrant
+[www]
+    comment = www
+    path = /var/www
+    force group = vagrant
+    force user = vagrant
+    read only = no
+    create mask = 0775
+    directory mask = 0775
+    browseable = yes
+    public = yes
