@@ -6,7 +6,6 @@ include php
 include phpqatools
 include exim
 include ruby::mailcatcher
-#include ruby
 include samba
 
 class { '::mysql::server':
