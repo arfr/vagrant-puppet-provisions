@@ -6,7 +6,6 @@
   :datadir: '/vagrant/.provision/hieradata'
 
 :hierarchy:
-  - common
   - php
   - mysql
   - postgresql
